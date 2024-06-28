@@ -4,8 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
-.box {
-  display: flex;
+.boxLayout {
+  /* display: flex; */
+  box-shadow: 0px 2px 10px 1px;
   gap: 40px;
-  flex-direction: column;
+  /* flex-direction: column; */
 }

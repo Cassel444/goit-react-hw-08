@@ -12,7 +12,8 @@ export default function Navigation() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <nav className={css.nav}>
+    <nav className={css.navNavigation}>
+      <h2 className={css.name}>Phonebook</h2>
       <NavLink className={makeLinksClass} to="/">
         Home
       </NavLink>
@@ -21,7 +22,6 @@ export default function Navigation() {
           Contacts
         </NavLink>
       )}
-      <h2 className={css.name}>Phonebook</h2>
     </nav>
   );
 }

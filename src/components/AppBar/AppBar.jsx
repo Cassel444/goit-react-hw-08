@@ -13,9 +13,9 @@ export default function AppBar() {
   const isRefreshing = useSelector(selectIsRefreshing);
 
   return (
-    <header className={css.header}>
+    <header className={css.headerBar}>
       <Navigation />
-      {!isRefreshing && <div>{isLoggedIn ? <UserMenu /> : <AuthNav />}</div>}
+      {!isRefreshing && isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
   );
 }
