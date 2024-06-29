@@ -10,12 +10,13 @@ import UserMenu from "../UserMenu/UserMenu";
 
 export default function AppBar() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const isRefreshing = useSelector(selectIsRefreshing);
+  // const isRefreshing = useSelector(selectIsRefreshing);
 
   return (
     <header className={css.headerBar}>
       <Navigation />
-      {!isRefreshing && isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {/* {!isRefreshing && isLoggedIn ? <UserMenu /> : <AuthNav />} */}
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
   );
 }
