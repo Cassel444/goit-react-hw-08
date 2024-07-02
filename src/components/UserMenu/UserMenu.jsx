@@ -10,7 +10,7 @@ export default function UserMenu() {
 
   return (
     <div className={css.wrapper}>
-      <PageTitle>Welcome,{user}</PageTitle>
+      <PageTitle>Welcome, {user.name} !</PageTitle>
       <button
         className={css.btn}
         type="button"

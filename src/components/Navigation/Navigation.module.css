@@ -25,6 +25,9 @@
   font-size: 22px;
   letter-spacing: 0.03em;
 }
+.accent:hover {
+  color: rgb(29 189 135);
+}
 .link {
   transform: scale(1);
   text-decoration: none;

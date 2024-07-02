@@ -61,6 +61,7 @@ export const refreshUser = createAsyncThunk(
         token.setAuth(persistedToken);
         try {
             const { data } = await axios.get('/users/current');
+            // console.log(data);
             return data;
         } catch (error) {
             toast('User is not found!', {
