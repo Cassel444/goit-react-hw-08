@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import css from "./Navigation.module.css";
 import clsx from "clsx";
+import PageTitle from "../PageTitle/PageTitle";
+import phone from "../../public/flat-color-icons_phone.svg";
 
 const makeLinksClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.isActive);
@@ -13,15 +15,20 @@ export default function Navigation() {
 
   return (
     <nav className={css.navNavigation}>
-      <h2 className={css.name}>Phonebook</h2>
-      <NavLink className={makeLinksClass} to="/">
-        Home
-      </NavLink>
-      {isLoggedIn && (
-        <NavLink className={makeLinksClass} to="/contacts">
-          Contacts
+      <div className={css.composition}>
+        <img className={css.image} src={phone} alt="phone" />
+        <PageTitle>Phonebook</PageTitle>
+      </div>
+      <div className={css.navigation}>
+        <NavLink className={makeLinksClass} to="/">
+          <span className={css.accent}>Home</span>
         </NavLink>
-      )}
+        {isLoggedIn && (
+          <NavLink className={makeLinksClass} to="/contacts">
+            Contacts
+          </NavLink>
+        )}
+      </div>
     </nav>
   );
 }

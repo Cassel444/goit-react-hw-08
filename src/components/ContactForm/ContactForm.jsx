@@ -4,8 +4,13 @@ import css from "./ContactForm.module.css";
 import { Formik, Form, Field } from "formik";
 import { contactFormSchema } from "../../schemas/contactFormSchema.js";
 
-function ContactForm() {
+export default function ContactForm() {
   const dispatch = useDispatch();
+
+  const handleSubmit = (values, action) => {
+    dispatch(addContact(values));
+    action.resetForm();
+  };
 
   return (
     <Formik
@@ -14,12 +19,9 @@ function ContactForm() {
         number: "",
       }}
       validationSchema={contactFormSchema}
-      onSubmit={(contact, actions) => {
-        dispatch(addContact({ name: contact.name, number: contact.number }));
-        actions.resetForm();
-      }}
+      onSubmit={handleSubmit}
     >
-      <Form className={css.form}>
+      <Form className={css.form} autoComplete="off">
         <label className={css.label}>
           Name
           <Field className={css.input} type="text" name="name" />
@@ -35,4 +37,3 @@ function ContactForm() {
     </Formik>
   );
 }
-export default ContactForm;

@@ -6,10 +6,9 @@ import { registrationFormSchema } from "../../schemas/registrationFormSchema.js"
 
 export default function RegistrationForm() {
   const dispatch = useDispatch();
-  const handleSubmit = (user, action) => {
-    dispatch(
-      register({ name: user.name, email: user.email, password: user.password })
-    );
+
+  const handleSubmit = (values, action) => {
+    dispatch(register(values));
     action.resetForm();
   };
 

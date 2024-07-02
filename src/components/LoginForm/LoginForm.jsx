@@ -7,8 +7,8 @@ import { loginFormSchema } from "../../schemas/loginFormSchema.js";
 export default function LoginForm() {
   const dispatch = useDispatch();
 
-  const handleSubmit = (user, action) => {
-    dispatch(logIn(user));
+  const handleSubmit = (values, action) => {
+    dispatch(logIn(values));
     action.resetForm();
   };
 
