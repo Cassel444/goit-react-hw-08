@@ -24,11 +24,23 @@ export default function LoginForm() {
       <Form className={css.form} autoComplete="off">
         <label className={css.label}>
           Email
-          <Field className={css.input} type="email" name="email" />
+          <Field
+            className={css.input}
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            autoComplete="off"
+          />
         </label>
         <label className={css.label}>
           Password
-          <Field className={css.input} type="password" name="password" />
+          <Field
+            className={css.input}
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            autoComplete="off"
+          />
         </label>
         <button className={css.btn} type="submit">
           Log In

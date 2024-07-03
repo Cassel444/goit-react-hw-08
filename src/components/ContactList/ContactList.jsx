@@ -14,14 +14,11 @@ export default function ContactList() {
   const error = useSelector(selectError);
 
   return (
-    <ul className={css.lists}>
+    <ul className={css.list}>
       {isLoading && !error && <Loader />}
       {error && <p>Oops, something went wrong! Please, try again</p>}
-
       {contacts.map(({ id, name, number }) => (
-        <li className={css.item} key={id}>
-          <Contact key={id} id={id} name={name} number={number} />
-        </li>
+        <Contact key={id} id={id} name={name} number={number} />
       ))}
     </ul>
   );

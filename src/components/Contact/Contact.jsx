@@ -8,25 +8,21 @@ export const Contact = ({ id, name, number }) => {
   const handleDelete = () => dispatch(deleteContact(id));
 
   return (
-    <>
+    <li className={css.contactLi}>
       <div>
-        <div className={css.element}>
-          <span className={css.icon}>
-            <BsFillPersonFill size={30} color="black" />
-          </span>
-          <p className={css.text}>{name}</p>
-        </div>
-        <div className={css.element}>
-          <span className={css.icon}>
-            <BsFillTelephoneFill size={30} color="black" />
-          </span>
-          <p className={css.text}>{number}</p>
-        </div>
+        <h3 className={css.name}>
+          <BsFillPersonFill size={30} color="black" />
+          {name}
+        </h3>
+        <p className={css.number}>
+          <BsFillTelephoneFill size={30} color="black" />
+          {number}
+        </p>
       </div>
 
       <button className={css.btn} onClick={handleDelete} type="submit">
         Delete
       </button>
-    </>
+    </li>
   );
 };
