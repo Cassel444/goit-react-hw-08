@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import css from "./RegistrationForm.module.css";
@@ -32,6 +32,7 @@ export default function RegistrationForm() {
             placeholder="Enter your name"
             autoComplete="off"
           />
+          <ErrorMessage name="name" component="span" className={css.error} />
         </label>
         <label className={css.label}>
           Email
@@ -42,6 +43,7 @@ export default function RegistrationForm() {
             placeholder="Enter your email"
             autoComplete="off"
           />
+          <ErrorMessage name="email" component="span" className={css.error} />
         </label>
         <label className={css.label}>
           Password
@@ -51,6 +53,11 @@ export default function RegistrationForm() {
             name="password"
             placeholder="Enter your password"
             autoComplete="off"
+          />
+          <ErrorMessage
+            name="password"
+            component="span"
+            className={css.error}
           />
         </label>
         <button className={css.btn} type="submit">
